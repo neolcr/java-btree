@@ -45,11 +45,11 @@ public class SqlNodeTree {
     }
 
 
-    public Type getTipo() {
+    public Type getType() {
         return type;
     }
 
-    public void setTipo(Type type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -67,5 +67,21 @@ public class SqlNodeTree {
 
     public void setPreviousValue(String previousValue) {
         this.previousValue = previousValue;
+    }
+
+    public Type getPreviousType() {
+        return previousType;
+    }
+
+    public void setPreviousType(Type previousType) {
+        this.previousType = previousType;
+    }
+
+    public Type getNextType() {
+        return nextType;
+    }
+
+    public void setNextType(Type nextType) {
+        this.nextType = nextType;
     }
 }
