@@ -13,5 +13,7 @@ public enum Type {
     KEYWORD,
     AST,
     FROM,
-    SEMICOLON, UNKNOWN
+    SEMICOLON,
+    END,
+    UNKNOWN
 }
