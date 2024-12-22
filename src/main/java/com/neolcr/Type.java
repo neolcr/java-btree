@@ -15,5 +15,6 @@ public enum Type {
     FROM,
     SEMICOLON,
     END,
-    UNKNOWN
+    UNKNOWN,
+    ROOT
 }

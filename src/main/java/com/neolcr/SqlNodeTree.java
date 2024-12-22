@@ -12,20 +12,23 @@ public class SqlNodeTree {
     Type nextType;
     Pattern pattern = Pattern.compile("a-zA-Z0-9", Pattern.CASE_INSENSITIVE);
     Matcher matcher = null;
-    SqlNodeTree child;
+    SqlNodeTree child = null;
 
     @Override
     public String toString() {
-        return "{" +
-                "value='" + value + '\'' +
-                '}';
+        if (this.type.equals(Type.UNKNOWN)) return "";
+        return "{\n" +
+                "\tvalue='" + value + '\n' +
+                "\ttype='" + type + '\n' +
+                "\tchild='" + child + '\n' +
+                "}";
     }
 
-    public SqlNodeTree() {
-        child = new SqlNodeTree();
+    public SqlNodeTree(Type type){
+        this.type = type;
     }
+
     public SqlNodeTree(String value, Type type, String previousValue, String nextValue) {
-        this();
         assert (value != null);
         assert (type != null);
         this.value = value;
@@ -43,7 +46,6 @@ public class SqlNodeTree {
     }
 
     public SqlNodeTree(String value, Type type, Type previousType, Type nextType) {
-        this();
         assert (value != null);
         assert (type != null);
         this.value = value;
